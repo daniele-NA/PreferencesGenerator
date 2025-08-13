@@ -28,14 +28,13 @@ internal val allowedAnnotations = listOf(
 /*
 “Applica l’annotazione StringPref al getter generato per questa proprietà.”
  */
+@Target(AnnotationTarget.PROPERTY_GETTER)
+@Retention(AnnotationRetention.SOURCE)
+annotation class StringPref(val defaultValue: String)
 
 @Target(AnnotationTarget.PROPERTY_GETTER)
 @Retention(AnnotationRetention.SOURCE)
 annotation class IntPref(val defaultValue: Int)
-
-@Target(AnnotationTarget.PROPERTY_GETTER)
-@Retention(AnnotationRetention.SOURCE)
-annotation class StringPref(val defaultValue: String)
 
 @Target(AnnotationTarget.PROPERTY_GETTER)
 @Retention(AnnotationRetention.SOURCE)

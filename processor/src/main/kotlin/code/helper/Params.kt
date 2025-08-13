@@ -15,7 +15,6 @@ fun buildParams(processingEnv: ProcessingEnvironment, prefList: MutableList<Pref
     prefList.forEach { pref ->
         val prefMethod: String = when (pref.type) {
             String::class -> "stringPreferencesKey"
-            Char::class -> "stringPreferencesKey" // Salva come char come stringa di lunghezza 1
             Int::class -> "intPreferencesKey"
             Long::class -> "longPreferencesKey"
             Boolean::class -> "booleanPreferencesKey"
@@ -28,7 +27,6 @@ fun buildParams(processingEnv: ProcessingEnvironment, prefList: MutableList<Pref
 
         val def = when (pref.type) {
             String::class -> "\"${pref.defaultValue}\""
-            Char::class -> "'${pref.defaultValue}'"
             else -> pref.defaultValue.toString()
         }
 
