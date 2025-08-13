@@ -96,8 +96,8 @@ interface JavaPref {
 
 
 dependencies {
-  implementation("com.github.daniele-NA:PreferencesGenerator:TAG") // es. 1.0.0
-  kapt("com.github.daniele-NA:PreferencesGenerator:TAG") // Same Tag
+  implementation("com.github.daniele-NA:PreferencesGenerator:v1.0.0")
+  kapt("com.github.daniele-NA:PreferencesGenerator:v1.0.0") // Same Tag
 }
 ```
 
