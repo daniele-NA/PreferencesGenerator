@@ -93,6 +93,16 @@ interface JavaPref {
 
 ## Usage
 
+
+# Import
+```
+dependencies {
+  implementation("com.github.daniele-NA:PreferencesGenerator:TAG") // es. 1.0.0
+  kapt("com.github.daniele-NA:PreferencesGenerator:TAG") // Same Tag
+}
+```
+
+
 ```kotlin
 val prefs = KotlinPrefImpl(this) // Or via DI
 
