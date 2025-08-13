@@ -1,0 +1,40 @@
+[versions]
+activity-compose = "1.9.0"
+agp = "8.3.1"
+compose-bom = "2024.04.01"
+junit = "4.13.2"
+junit-ktx = "1.2.1"
+kotlin = "1.9.0"
+# kotlin = "2.0.0"
+kotlinx-coroutines-test = "1.8.1"
+ksp = "1.9.0-1.0.13"
+# ksp = "2.0.0-1.0.22"
+room-ktx = "2.6.1"
+runner = "1.6.1"
+
+[libraries]
+activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+foundation = { module = "androidx.compose.foundation:foundation" }
+junit = { module = "junit:junit", version.ref = "junit" }
+junit-ktx = { module = "androidx.test.ext:junit-ktx", version.ref = "junit-ktx" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-test" }
+material3 = { module = "androidx.compose.material3:material3" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room-ktx" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room-ktx" }
+room-testing = { module = "androidx.room:room-testing", version.ref = "room-ktx" }
+runner = { module = "androidx.test:runner", version.ref = "runner" }
+runtime = { module = "androidx.compose.runtime:runtime" }
+symbol-processing-aa-embeddable = { module = "com.google.devtools.ksp:symbol-processing-aa-embeddable", version.ref = "ksp" }
+symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
+symbol-processing-common-deps = { module = "com.google.devtools.ksp:symbol-processing-common-deps", version.ref = "ksp" }
+ui = { module = "androidx.compose.ui:ui" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
