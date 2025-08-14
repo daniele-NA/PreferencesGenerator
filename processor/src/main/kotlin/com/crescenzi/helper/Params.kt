@@ -1,8 +1,9 @@
-package code.helper
+package com.crescenzi.helper
 
-import code.Pref
-import code.core.Values
-import code.exception.throwError
+import com.crescenzi.Pref
+import com.crescenzi.core.Values
+import com.crescenzi.exception.throwError
+import com.crescenzi.helper.shared.adjustCamelCase
 import javax.annotation.processing.ProcessingEnvironment
 
 /**
@@ -39,12 +40,14 @@ fun buildParams(processingEnv: ProcessingEnvironment, prefList: MutableList<Pref
 
         sb.appendLine(
             """
-val ${pref.key.uppercase()}${Values.KEY_SUFFIX} = $prefMethod("${pref.key}")                           
-val ${pref.key.uppercase()}${Values.DEFAULT_SUFFIX} : ${pref.type.simpleName} = $def$MUST_APPEND_F
-                        
-             """.trimIndent()
+    |val ${adjustCamelCase(pref.key)}${Values.KEY_SUFFIX} = $prefMethod("${pref.key}")
+    |val ${adjustCamelCase(pref.key)}${Values.DEFAULT_SUFFIX}: ${pref.type.simpleName} = $def$MUST_APPEND_F
+    |
+    """.trimMargin()
         )
+
     }
 
     return sb.toString()
 }
+

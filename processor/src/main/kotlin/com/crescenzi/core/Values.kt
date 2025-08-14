@@ -1,4 +1,4 @@
-package code.core
+package com.crescenzi.core
 
 object Values {
 

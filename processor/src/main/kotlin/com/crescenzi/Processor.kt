@@ -1,12 +1,12 @@
-package code
+package com.crescenzi
 
 
-import code.core.Values
-import code.exception.throwError
-import code.helper.buildFlows
-import code.helper.buildImports
-import code.helper.buildParams
-import code.helper.buildResetMethod
+import com.crescenzi.core.Values
+import com.crescenzi.exception.throwError
+import com.crescenzi.helper.buildFlows
+import com.crescenzi.helper.buildImports
+import com.crescenzi.helper.buildParams
+import com.crescenzi.helper.buildResetMethod
 import com.google.auto.service.AutoService
 import javax.annotation.processing.AbstractProcessor
 import javax.annotation.processing.Processor
@@ -14,6 +14,7 @@ import javax.annotation.processing.RoundEnvironment
 import javax.lang.model.SourceVersion
 import javax.lang.model.element.PackageElement
 import javax.lang.model.element.TypeElement
+import javax.tools.StandardLocation
 
 
 @AutoService(Processor::class)
@@ -117,12 +118,13 @@ class Processor : AbstractProcessor() {
 
 
                 val imports = buildImports()
-                val params = buildParams(processingEnv,prefList)
-                val flows = buildFlows(prefList)
-                val resetMethod = buildResetMethod(prefList)
+                val params = indent(buildParams(processingEnv,prefList), 8)  // dentro companion object
+                val flows = indent(buildFlows(prefList), 4)    // dentro classe
+                val resetMethod= indent(buildResetMethod(prefList), 4)
+
 
                 val fileObject = processingEnv.filer.createResource( // Crea un file .Kt
-                    javax.tools.StandardLocation.SOURCE_OUTPUT,
+                    StandardLocation.SOURCE_OUTPUT,
                     packageName,
                     "$interfaceName.kt"
                 )
@@ -138,7 +140,7 @@ $imports
 
 class $interfaceName(val context: Context) {
 
-    companion object{
+    companion object {
     
      ${params.trim()}
     
@@ -159,7 +161,7 @@ class $interfaceName(val context: Context) {
 
     ${resetMethod.trim()}
  
- }
+}
                     """.trimIndent()
                         )
                     }
@@ -169,4 +171,17 @@ class $interfaceName(val context: Context) {
     }
 
 
+}
+
+/**
+ * Aggiunge indentazione a ciascuna riga del testo.
+ * @param text Il blocco di testo da indentare
+ * @param spaces Numero di spazi da aggiungere a inizio riga
+ */
+fun indent(text: String, spaces: Int = 4): String {
+    val pad = " ".repeat(spaces)
+    return text.lineSequence()
+        .joinToString("\n") { line ->
+            if (line.isBlank()) "" else pad + line.trimEnd()
+        }
 }
