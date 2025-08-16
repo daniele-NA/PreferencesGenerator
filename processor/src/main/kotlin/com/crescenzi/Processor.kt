@@ -153,9 +153,11 @@ class $interfaceName(val context: Context) {
  
     ${flows.trim()}
     
-    suspend fun <T> updatePreference(key: Preferences.Key<T>, value: T) {
-        prefs.edit { preferences ->
-            preferences[key] = value
+    fun <T> updatePreference(key: Preferences.Key<T>, value: T) {
+        scope.launch{
+            prefs.edit { preferences ->
+                preferences[key] = value
+            }
         }
     }
 

@@ -12,7 +12,7 @@ Supports only **primitive types** (String included, Char excluded).
 ## YOUR INTERFACE
 
 ```kotlin
-import code.*
+import com.crescenzi.*;
 
 @GeneratePreferences("my_preferences")
 interface KotlinPref {
@@ -96,8 +96,8 @@ interface JavaPref {
 
 
 dependencies {
-  implementation("com.github.daniele-NA:PreferencesGenerator:v1.0.0")
-  kapt("com.github.daniele-NA:PreferencesGenerator:v1.0.0") // Same Tag
+  implementation("com.github.daniele-NA:PreferencesGenerator:v1.0.2")
+  kapt("com.github.daniele-NA:PreferencesGenerator:v1.0.2") // Same Tag
 }
 ```
 
