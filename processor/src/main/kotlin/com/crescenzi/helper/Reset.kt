@@ -20,11 +20,13 @@ fun buildResetMethod(prefList: MutableList<Pref<*>>): String {
 
     sb.append(
         """
-        suspend fun resetAllPreferences() {
+        fun resetAllPreferences() {
 
-            prefs.edit { preferences ->
+        scope.launch{
+                prefs.edit { preferences ->
 $pairs
-            }        
+                }  
+            }
         }
         """.trimIndent()
     )
