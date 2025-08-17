@@ -40,7 +40,9 @@ fun buildParams(processingEnv: ProcessingEnvironment, prefList: MutableList<Pref
 
         sb.appendLine(
             """
+    |@JvmStatic
     |val ${adjustCamelCase(pref.key)}${Values.KEY_SUFFIX} = $prefMethod("${pref.key}")
+    |@JvmStatic
     |val ${adjustCamelCase(pref.key)}${Values.DEFAULT_SUFFIX}: ${pref.type.simpleName} = $def$MUST_APPEND_F
     |
     """.trimMargin()
