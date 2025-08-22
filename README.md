@@ -17,7 +17,7 @@ import com.crescenzi.*;
 @GeneratePreferences("my_preferences")
 interface KotlinPref {
 
-  @get:StringPref("Kevin")
+    @get:StringPref("Kevin")
     val name: String
 
     @get:IntPref(18)
@@ -46,7 +46,11 @@ interface KotlinPref {
 class KotlinPrefImpl(val context: Context) {
 
     companion object {
+        
+        @JvmStatic
         val NAME_KEY = stringPreferencesKey("name")
+      
+        @JvmStatic
         val NAME_DEFAULT: String = "Kevin"
       
       //OTHERS PREFERENCES DECLARATIONS
