@@ -1,13 +1,9 @@
-````markdown
 # Lightweight Preferences Generator for Android
 
 Easily define preferences with **less code** than standard Android libraries.  
 Supports only **primitive types** (String included, Char excluded).  
 
 ✅ Compatible with **Java** and **Kotlin**.
-
-
-````
 
 ## YOUR INTERFACE
 
@@ -133,10 +129,3 @@ prefs.name.collect { value -> println(value) } // Observe
     * **Observable state** (`StateFlow`)
 
 ---
-
-## Contact
-
-For questions or help: **[crescenziaziendale@gmail.com](mailto:crescenziaziendale@gmail.com)**
-*Response time: <30 minutes*
-
-```
