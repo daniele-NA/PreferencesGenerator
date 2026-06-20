@@ -14,7 +14,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "preferences_lib"
+rootProject.name = "gen_z"
 
 include(":app")
 include(":processor")

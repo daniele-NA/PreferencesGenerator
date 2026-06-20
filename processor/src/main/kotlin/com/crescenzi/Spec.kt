@@ -1,3 +1,4 @@
+@file:Suppress("Unused")
 package com.crescenzi
 
 import kotlin.reflect.KClass
@@ -25,30 +26,28 @@ internal val allowedAnnotations = listOf(
 )
 
 
-/*
-“Applica l’annotazione StringPref al getter generato per questa proprietà.”
- */
-@Target(AnnotationTarget.PROPERTY_GETTER)
+// == applicable directly to the property (Kotlin) or to the getter (`@get:` / Java methods) == //
+@Target(AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER)
 @Retention(AnnotationRetention.SOURCE)
 annotation class StringPref(val defaultValue: String)
 
-@Target(AnnotationTarget.PROPERTY_GETTER)
+@Target(AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER)
 @Retention(AnnotationRetention.SOURCE)
 annotation class IntPref(val defaultValue: Int)
 
-@Target(AnnotationTarget.PROPERTY_GETTER)
+@Target(AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER)
 @Retention(AnnotationRetention.SOURCE)
 annotation class BooleanPref(val defaultValue: Boolean)
 
-@Target(AnnotationTarget.PROPERTY_GETTER)
+@Target(AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER)
 @Retention(AnnotationRetention.SOURCE)
 annotation class LongPref(val defaultValue: Long)
 
-@Target(AnnotationTarget.PROPERTY_GETTER)
+@Target(AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER)
 @Retention(AnnotationRetention.SOURCE)
 annotation class FloatPref(val defaultValue: Float)
 
-@Target(AnnotationTarget.PROPERTY_GETTER)
+@Target(AnnotationTarget.PROPERTY, AnnotationTarget.PROPERTY_GETTER)
 @Retention(AnnotationRetention.SOURCE)
 annotation class DoublePref(val defaultValue: Double)
 

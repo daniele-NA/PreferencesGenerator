@@ -13,22 +13,22 @@ import com.crescenzi.*;
 @GeneratePreferences("my_preferences")
 interface KotlinPref {
 
-    @get:StringPref("Kevin")
+    @StringPref("Kevin")
     val name: String
 
-    @get:IntPref(18)
+    @IntPref(18)
     val age: Int
 
-    @get:BooleanPref(true)
+    @BooleanPref(true)
     val isActive: Boolean
 
-    @get:LongPref(1000L)
+    @LongPref(1000L)
     val timestamp: Long
 
-    @get:FloatPref(12.5f)
+    @FloatPref(12.5f)
     val priceFloat: Float
 
-    @get:DoublePref(99.99)
+    @DoublePref(99.99)
     val priceDouble: Double
 
 }
@@ -92,12 +92,15 @@ interface JavaPref {
 
 ## Import
 ```
-// Make sure you have enabled Kapt In Top Plugins Section.... USE JAVA 17
+// Make sure you have enabled KSP In Top Plugins Section.... USE JAVA 17
 
+plugins {
+  id("com.google.devtools.ksp") version "1.9.0-1.0.13" // Match your Kotlin version
+}
 
 dependencies {
-  implementation("com.github.daniele-NA:PreferencesGenerator:v1.0.4")
-  kapt("com.github.daniele-NA:PreferencesGenerator:v1.0.4") // Same Tag
+  implementation("com.github.daniele-NA:gen_z:v1.0.4")
+  ksp("com.github.daniele-NA:gen_z:v1.0.4") // Same Tag
 }
 ```
 

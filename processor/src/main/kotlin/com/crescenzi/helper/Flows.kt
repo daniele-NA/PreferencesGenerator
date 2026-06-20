@@ -5,9 +5,7 @@ import com.crescenzi.core.Values
 import com.crescenzi.helper.shared.adjustCamelCase
 import kotlin.collections.forEach
 
-/*/
-Flows Fields
- */
+// == flows fields == //
 fun buildFlows(prefList : MutableList<Pref<*>> ): String{
 
     val sb = StringBuilder()
@@ -16,8 +14,8 @@ fun buildFlows(prefList : MutableList<Pref<*>> ): String{
 
     prefList.forEach { pref ->
 
-        val key=adjustCamelCase(pref.key)+Values.KEY_SUFFIX   // PRIMARY_COLOR_KEY
-        val default=adjustCamelCase(pref.key)+Values.DEFAULT_SUFFIX // PRIMARY_COLOR_DEFAULT
+        val key=adjustCamelCase(pref.key)+Values.KEY_SUFFIX   // == PRIMARY_COLOR_KEY == //
+        val default=adjustCamelCase(pref.key)+Values.DEFAULT_SUFFIX // == PRIMARY_COLOR_DEFAULT == //
 
         sb.appendLine(
             """

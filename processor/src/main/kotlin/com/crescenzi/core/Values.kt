@@ -8,6 +8,4 @@ object Values {
 
     const val PREF_VAL_NAME="defaultValue"
 
-
-
 }
