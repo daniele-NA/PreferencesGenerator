@@ -99,8 +99,8 @@ plugins {
 }
 
 dependencies {
-  implementation("com.github.daniele-NA:gen_z:v1.0.4")
-  ksp("com.github.daniele-NA:gen_z:v1.0.4") // Same Tag
+  implementation("com.github.d-crescenzi:gen_z:v1.0.4")
+  ksp("com.github.d-crescenzi:gen_z:v1.0.4") // Same Tag
 }
 ```
 
